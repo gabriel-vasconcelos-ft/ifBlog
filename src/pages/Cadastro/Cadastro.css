@@ -1,0 +1,19 @@
+ 
+body {
+    background-color: rgba(234, 235, 234, 0.5);
+    background-image: url("https://ifce.edu.br/acarau/Imagens/galeria_fotos/historico/faccamp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+ 
+
+div.container {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 25px;                        
+}
+
+img{
+    height: 30%;
+    width: 130px;
+}
