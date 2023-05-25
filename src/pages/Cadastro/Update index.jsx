@@ -20,7 +20,7 @@ function cadastro() {
     <input type="label" className="form-control" id="nomeID" aria-describedby="emailHelp" placeholder="Nome"></input>
   </div>
   <div className="form-group mb-3 ">
-    <input type="number" className="form-control" id="matriculaID" aria-describedby="emailHelp" placeholder="Matrícula"></input>
+    <input type="label" className="form-control" id="matriculaID" aria-describedby="emailHelp" placeholder="Matrícula"></input>
   </div>
   <div className="form-group mb-3 ">
     <input type="email" className="form-control" id="emailID" aria-describedby="emailHelp" placeholder="E-mail Institucional"></input>
