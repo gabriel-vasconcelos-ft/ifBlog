@@ -12,6 +12,7 @@ body {
     border-radius: 25px; 
     margin-top: 5%;
     background-size: 100%;
+	max-width: 500px;
 
 }
 
