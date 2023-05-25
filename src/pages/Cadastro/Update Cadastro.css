@@ -2,7 +2,7 @@
 body {
     background-image: url("https://ifce.edu.br/acarau/Imagens/galeria_fotos/historico/faccamp.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
   }
  
 
@@ -11,6 +11,8 @@ body {
     background-color: #ffffff;
     border-radius: 25px; 
     margin-top: 5%;
+    background-size: 100%;
+
 }
 
 img{
