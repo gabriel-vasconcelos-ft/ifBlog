@@ -1,12 +1,16 @@
 /* eslint-disable no-unused-vars */
 import "./Cadastro.css";
 import React, { useState } from "react";
+import axios from "axios";
 
 function Cadastro() {
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
   const [formValidated, setFormValidated] = useState(false);
   const [senhaError, setSenhaError] = useState("");
+  const [email, setEmail] = useState("");
+  const [matricula, setMatricula] = useState("");
+  const [nome, setNome] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -38,6 +42,7 @@ function Cadastro() {
   };
 
   return (
+    
     <div className="backgroundvisual">
       <div className="container p-5">
         <form className={`needs-validation ${formValidated ? "was-validated" : ""}`} noValidate onSubmit={handleSubmit}>
@@ -51,20 +56,29 @@ function Cadastro() {
             </small>
           </div>
           <div className="form-group mb-3">
-            <input type="label" className="form-control" id="nomeID" placeholder="Nome" required />
+            <input type="label" 
+            className="form-control" 
+            id="nomeID" 
+            onChange={(e)=>{setNome(e.target.value)}}
+            placeholder="Nome" required />
           </div>
           <div className="form-group mb-3">
             <input
               type="text"
               className="form-control"
               id="matriculaID"
+              onChange={(e)=>{setMatricula(e.target.value)}}
               placeholder="Matrícula"
               onKeyPress={handleMatriculaKeyPress}
               required
             />
           </div>
           <div className="form-group mb-3">
-            <input type="email" className="form-control" id="emailID" placeholder="E-mail Institucional" required />
+            <input type="email" 
+            className="form-control" 
+            id="emailID" 
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="E-mail Institucional" required />
           </div>
           <div className="form-group mb-3">
             <input
@@ -93,11 +107,19 @@ function Cadastro() {
             <label className="form-label">Envie uma foto sua</label>
             <input className="form-control" type="file" id="formFile" />
           </div>
-          <button type="submit" className="btn btn-outline-success mb-2">
+          <button type="button" className="btn btn-outline-success mb-2" onClick={(e)=> {
+            let entity = {
+              "nome": nome,
+               "matricula": matricula,
+               "email": email,
+               "senha": senha
+          }
+            axios.post("http://localhost:8080/autor/salvar", entity).then((res) => alert(res.data.status))
+          }}>
             Cadastrar
           </button>
           <div className="form-label">
-            <a id="cadastroID" className="form-text text-muted" type="submit">
+            <a id="cadastroID" className="form-text text-muted" type="button">
               Ou fazer login
             </a>
           </div>
