@@ -44,6 +44,7 @@ function Cadastro() {
   return (
     
     <div className="backgroundvisual">
+      <div className="alturaCadastro">
       <div className="container p-5">
         <form className={`needs-validation ${formValidated ? "was-validated" : ""}`} noValidate onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -107,7 +108,7 @@ function Cadastro() {
             <label className="form-label">Envie uma foto sua</label>
             <input className="form-control" type="file" id="formFile" />
           </div>
-          <button type="button" className="btn btn-outline-success mb-2" onClick={(e)=> {
+          <button type="submit" className="btn btn-outline-success mb-2" onClick={(e)=> {
             let entity = {
               "nome": nome,
                "matricula": matricula,
@@ -119,11 +120,12 @@ function Cadastro() {
             Cadastrar
           </button>
           <div className="form-label">
-            <a id="cadastroID" className="form-text text-muted" type="button">
+            <a href="/login" id="loginID">
               Ou fazer login
             </a>
           </div>
         </form>
+      </div>
       </div>
     </div>
   );
