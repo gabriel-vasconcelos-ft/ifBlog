@@ -22,6 +22,7 @@ function login() {
   return (
 
 <div className="backgroundvisual">
+  <div className="alturaLogin">
   <div className="container p-5">
   <form className="needs-validation" noValidate>
 
@@ -48,10 +49,11 @@ function login() {
   <button type="submit" className="btn btn-outline-success mb-2">Entrar</button>
 
   <div className="form-label">
-    <label id="cadastroID" className="form-text text-muted" type="submit"> Ou cadastra-se</label>
+    <a href="/cadastro"> Ou cadastra-se</a>
   </div>
 
     </form>
+    </div>
     </div>
   </div>
 
